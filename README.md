@@ -27,12 +27,12 @@ struct key_value_object : public chainbase::object<key_value_object_type, key_va
    table_id       t_id;                                              ~= 16 bits
    uint64_t       primary_key;                                       ~= 64 bits
    account_name   payer = 0;                                         ~= 64 bits
-   shared_blob    value;                                             -> Row|Record
+   shared_blob    value;                                             -> Inherited from shared_string ~ Pointer (i.e. 32 bits on a 32-bit machine OR a 64 bits on a 64-bit machine)
 };
 ```
 
 The Chainbase is the Boost Multi Index Table.
 
-** Each unique Code-Scope is a different table_id_object with a single key_value_object (-> table_id_object & key_value_object Overhead Cost occur for each Record).
+** Each unique Code-Scope is a different `table_id_object` with a single `key_value_object` (-> `table_id_object` & `key_value_object` Overhead Cost occur for each Record).
 
-** For a non-unique Code-Scope (e.g. Same Code == Scope (get_self(), get_self().value)) (-> 1 table_id_object Overhead Cost & key_value_object Overhead Cost for each new Record).
+** For a non-unique Code-Scope (e.g. Same Code == Scope (get_self(), get_self().value)) (-> 1 `table_id_object` Overhead Cost & `key_value_object` Overhead Cost for each new Record).
