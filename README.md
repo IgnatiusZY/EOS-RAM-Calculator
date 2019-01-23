@@ -36,3 +36,5 @@ The Chainbase is the Boost Multi Index Table.
 ** Each unique Code-Scope is a different `table_id_object` with a single `key_value_object` (-> `table_id_object` & `key_value_object` Overhead Cost occur for each Record).
 
 ** For a non-unique Code-Scope (e.g. Same Code == Scope (get_self(), get_self().value)) (-> 1 `table_id_object` Overhead Cost & `key_value_object` Overhead Cost for each new Record).
+
+`https://github.com/EOSIO/eos/issues/4532` ~= 240 BYTES!
