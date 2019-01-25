@@ -96,6 +96,16 @@ template<typename T>
 constexpr uint64_t billable_size_v = ((billable_size<T>::value + billable_alignment - 1) / billable_alignment) * billable_alignment;
 ```
 
-`Net Billable Ram Cost = (<no_of_struct_unique_scopes> * config::billable_size_v<table_id_object>) + config::billable_size_v<key_value_object> + <contract_struct_row_size>`
+`Net Billable RAM Cost = (<no_of_struct_unique_scopes> * config::billable_size_v<table_id_object>) + config::billable_size_v<key_value_object> + <contract_struct_row_size>`
 
 `https://github.com/EOSIO/eos/issues/4532` ~= 240 BYTES!
+
+Amount of Code
+```
+Amount of Code = code_size (sizeof(.wasm)) * setcode_ram_bytes_multiplier (10)
+```
+
+Net RAM for DApp
+```
+Net RAM for DApp = Amount of Code + Net Billable RAM Cost
+```
