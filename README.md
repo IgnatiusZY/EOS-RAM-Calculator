@@ -1,7 +1,8 @@
 # EOS-RAM-Calculator
 EOS RAM Calculator
 
-The Chainbase === Boost Multi Index Table.
+Chainbase === Boost Multi Index Table.
+
 `https://github.com/EOSIO/eos/blob/master/libraries/chain/include/eosio/chain/contract_table_objects.hpp`
 
 `https://github.com/EOSIO/eos/blob/master/libraries/chain/include/eosio/chain/config.hpp`
